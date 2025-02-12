@@ -1,0 +1,16 @@
+  523  touch reports/summary.md
+  524  echo "This document provides a summary of the project updates." > reports/summary.md
+  525  git add reports/
+  526  git commit -m "Add reports directory"
+  527  touch reports/file{1..3}.txt
+  528  mv data/raw-data.csv data/input-data.csv
+  529  mkdir scripts/backup && cp scripts/*.py scripts/backup/
+  530  rm docs/documentation.md
+  531  git add .
+  532  git commit -m "Update project files"
+  533  touch .gitignore
+  534  echo -e "temp/\ndataset0?.csv" > .gitignore
+  535  cat .gitignore
+  536  git add .gitignore && git commit -m "Add .gitignore file"
+  537  git checkout main
+  538  git merge feature-update
